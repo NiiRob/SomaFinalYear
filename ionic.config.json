@@ -1,5 +1,7 @@
 {
   "name": "SomaProject",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
