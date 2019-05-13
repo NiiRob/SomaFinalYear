@@ -1,0 +1,24 @@
+{
+    "faqs": [
+        {
+            "question": "Who is WAEC?",
+            "answer": "Go and ask your Mother"
+        },
+        {
+            "question": "Where can I find WAEC?",
+            "answer": "Go and ask your Father"
+        },
+        {
+            "question": "How old is WAEC?",
+            "answer": "Go and ask your Grandfather"
+        },
+        {
+            "question": "How do I check WASSCE results?",
+            "answer": "Go and ask your Somarino"
+        },
+        {
+            "question": "Are the WASSCE results out?",
+            "answer": "Go and ask CNN"
+        }
+    ]
+}

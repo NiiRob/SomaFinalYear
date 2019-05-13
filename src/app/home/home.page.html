@@ -1,8 +1,28 @@
-<ion-content>
-	
+<ion-content color="primary">
+	<ion-grid>
+		<ion-row justify-content-center>
+			<ion-col align-self-center size-md="6" size-lg="5" size-xs="12">
+				<div text-center class="myPad">
+					<img src="../../assets/images/ges.png" style="height: 90px; width: 100px">
+					<span>
+						<h1>CHATBOT</h1>
+					</span>
+				</div>
+				<br>
+				<div padding>
+					<ion-button class="loginBut" expand="block" 
+					(click)="login()">Login</ion-button>
+				</div>
+				<div padding>
+					<ion-button class="signUpBut" expand="block"
+					(click)="signUp()">Sign Up</ion-button>
+				</div>
+				<div padding>
+					<ion-button class="visitorBut" expand="block"
+					(click)="visit()">Continue as Visitor</ion-button>
+				</div>
+				<!-- <small>&copy Powered by DN</small> -->
+			</ion-col>
+		</ion-row>
+	</ion-grid>
 </ion-content>
-<!-- <ion-slides pager="false" [options]="slideOpts" *ngFor="let back of backImages">
-	<ion-slide>
-		<img src="{{back}}" alt="">
-	</ion-slide>
-</ion-slides> -->

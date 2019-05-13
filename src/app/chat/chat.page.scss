@@ -20,8 +20,8 @@
     float: right;
 }
 .message.from {
-    background-color: #E5E4E9;
-    color: #363636;
+    background-color: rgb(155, 144, 199);
+    color: #ebebeb;
     margin-right: 45%;
 
 }
@@ -73,4 +73,12 @@ button:focus {
 
 .myDiv {
     display: inline-block !important;
+}
+
+.back {
+    background-image: url(../../assets/images/back.jpg);
+}
+
+ion-content {
+    --background: auto;
 }

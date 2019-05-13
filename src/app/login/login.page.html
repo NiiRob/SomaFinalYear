@@ -1,10 +1,16 @@
-<ion-header>
-	<ion-toolbar>
-		<ion-title>login</ion-title>
-	</ion-toolbar>
-</ion-header>
-
 <ion-content padding>
+	<ion-grid>
+		<ion-row justify-content-center>
+			<ion-col align-self-center size-md="6" size-lg="5" size-xs="12">
+				<div text-center class="myPads">
+					<img src="../../assets/images/ges.png" style="height: 80px; width: 90px">
+					<span>
+						<h3>LOGIN</h3>
+					</span>
+				</div>
+			</ion-col>
+		</ion-row>
+	</ion-grid>
 	<ion-list>
 		<ion-item>
 			<ion-label position="floating">Email</ion-label>
@@ -18,7 +24,7 @@
 	<ion-button fill="solid" expand="block" color="primary" (click)="onLogin()">Login</ion-button>
 
 	<small padding class="ion-text-center">
-		<h6>
+		<h6 class="myFont">
 			Do not have an account?? 
 			<a routerLink="/register" class="myLink"> Register </a>
 		</h6>

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -6,10 +7,17 @@ import { Component } from '@angular/core';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
-  slideOpts = {
-    initialSlide: 1,
-    speed: 1000,
-    autoplay: true,
-    pager: false
-  };
+
+  constructor(private router: Router){}
+  login() {
+    this.router.navigate(['/login']);
+  }
+
+  signUp() {
+    this.router.navigate(['/register']);
+  }
+
+  visit() {
+    this.router.navigate(['/faq']);
+  }
 }

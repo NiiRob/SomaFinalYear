@@ -1,1 +1,21 @@
+.loginBut {
+    --border-radius: 50px;
+    --background: #f8f8f8;
+    --color: #313131;
+}
 
+.signUpBut {
+    --border-radius: 50px;
+    --background: #3880ff;
+    --color: #e8e8e8;
+    --border-color: #f8f8f8;
+    --border-style: solid;
+}
+
+.visitorBut {
+    --border-radius: 50px;
+    --background: #f8f8f821;
+    --color: #c9ca6c;
+    // --border-color: #f8f8f8;
+    // --border-style: solid;
+}

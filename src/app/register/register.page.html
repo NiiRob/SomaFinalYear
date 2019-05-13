@@ -1,18 +1,21 @@
-<ion-header>
-	<ion-toolbar>
-		<ion-title>Register</ion-title>
-	</ion-toolbar>
-</ion-header>
-
 <ion-content padding>
+	<ion-grid>
+		<ion-row justify-content-center>
+			<ion-col align-self-center size-md="6" size-lg="5" size-xs="12">
+				<div text-center class="myPads1">
+					<img src="../../assets/images/ges.png" style="height: 70px; width: 80px">
+					<span>
+						<h3>SIGN UP</h3>
+					</span>
+				</div>
+			</ion-col>
+		</ion-row>
+	</ion-grid>
 	<ion-list>
 		<ion-item>
 			<ion-label position="floating">Email</ion-label>
 			<ion-input type="email" [(ngModel)]="email"></ion-input>
 		</ion-item>
-		<!-- <small padding *ngIf="" style="color:red">
-			Email not valid
-		</small> -->
 
 		<ion-item>
 			<ion-label position="floating">Password</ion-label>
@@ -29,11 +32,11 @@
 		</small>
 	</ion-list>
 	<ion-button fill="solid" expand="block" color="primary" (click)="onRegister()"
-	[disabled]="password !== confirmPassword || !email">Sign Up</ion-button>
+		[disabled]="password !== confirmPassword || !email">Sign Up</ion-button>
 
 	<small padding class="ion-text-center">
-		<h6>
-			Have an account already?? 
+		<h6 class="myFont">
+			Have an account already??
 			<a routerLink="/login" class="myLink"> Sign in </a>
 		</h6>
 	</small>

@@ -1,18 +1,18 @@
 <ion-header>
-	<ion-toolbar>
+	<ion-toolbar color="tertiary">
 		<ion-title>ChatBot</ion-title>
 		<ion-buttons slot="end">
 				<ion-button color="dark" (click)="onLogout()">
-					<ion-icon slot="icon-only" name="log-out"></ion-icon>
+					<ion-icon color="light" slot="icon-only" name="log-out"></ion-icon>
 				</ion-button>
 			</ion-buttons>
 	</ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content class="back">
 	<ng-container *ngFor="let message of messages | async">
-		<div class="message myDiv" [ngClass]="{ 'from': message.sentBy === 'bot',
-                                      'to':   message.sentBy === 'user' }">
+		<div class="message myDiv" 
+		[ngClass]="{ 'from': message.sentBy === 'bot', 'to': message.sentBy === 'user' }">
 			{{ message.content }}
 		</div>
 	</ng-container>

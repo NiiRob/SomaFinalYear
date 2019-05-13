@@ -1,0 +1,24 @@
+<ion-header>
+	<ion-toolbar color="tertiary">
+		<ion-title>FAQ</ion-title>
+		<!-- <ion-buttons slot="end">
+			<ion-button (click)="automaticClose">
+				<ion-icon slot="icon-only" name="close" *ngIf="automaticClose"></ion-icon>
+				<ion-icon slot="icon-only" name="resize" *ngIf="!automaticClose"></ion-icon>
+			</ion-button>
+		</ion-buttons> -->
+	</ion-toolbar>
+</ion-header>
+
+<ion-content>
+	<ion-list *ngFor="let item of info; let i = index" class="accordion-list" lines="none" detail="false" no-padding>
+		<ion-item tappable (click)="toggleSection(i)" [ngClass]="{'section-active':item.open,'section':!item.open}">
+			<ion-icon slot="start" name="arrow-forward" *ngIf="!item.open"></ion-icon>
+			<ion-icon slot="start" name="arrow-down" *ngIf="item.open"></ion-icon>
+			{{item.question}}
+		</ion-item>
+		<div *ngIf="item.answer && item.open" padding class="inner">
+			{{item.answer}}
+		</div>
+	</ion-list>
+</ion-content>
