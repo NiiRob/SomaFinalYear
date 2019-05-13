@@ -15,6 +15,8 @@ export class RegisterPage implements OnInit {
   password = '';
   confirmPassword = '';
 
+  minlength = 6;
+
   constructor(public afAuth: AngularFireAuth, public toastController: ToastController, private router: Router) { }
 
   ngOnInit() {

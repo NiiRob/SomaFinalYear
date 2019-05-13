@@ -26,9 +26,8 @@ export class LoginPage implements OnInit {
       this.router.navigateByUrl('/chat');
       this.resetForm();
     } catch (err) {
-      // console.dir(err);
+
       if (err.code === 'auth/user-not-found') {
-        // console.log('User not found');
         const toast = await this.toastController.create({
         message: 'Invalid User',
         duration: 2000,
