@@ -6,7 +6,8 @@ export const environment = {
   production: false,
 
   dialogflow: {
-    angularBot: 'ddb971da18bb493596fb4043ecd72117'
+    // angularBot: 'ddb971da18bb493596fb4043ecd72117'
+    angularBot: '7695989c4f994b45863901dabdf3589f'
   },
 
   firebaseConfig: {

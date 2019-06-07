@@ -1,5 +1,5 @@
-import { Component, OnInit, ViewChild} from '@angular/core';
-import { Observable } from 'rxjs';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { Observable, Subscription } from 'rxjs';
 import { Message, ChatService } from './chat.service';
 import { scan } from 'rxjs/operators';
 import { AngularFireAuth } from '@angular/fire/auth';
@@ -17,24 +17,40 @@ export class ChatPage implements OnInit {
 
   messages: Observable<Message[]>;
   formValue: string;
-
+  subscription: Subscription;
   constructor(public chat: ChatService, public afAuth: AngularFireAuth, private router: Router) { }
 
   ngOnInit() {
     // appends to array after each new message is added to feedSource
     this.messages = this.chat.conversation.asObservable()
-    .pipe(
-      scan((acc, val) => acc.concat(val) )
+      .pipe(
+        scan((acc, val) => acc.concat(val))
       );
-    }
+  }
 
   sendMessage() {
     this.chat.converse(this.formValue);
     this.formValue = '';
 
-    setTimeout(() => {
-      this.content.scrollToBottom(200);
-    }, 1000);
+    if (this.chat.conversation.value.length !== 0) {
+      this.sentMessageAudio();
+      setTimeout(() => {
+        this.content.scrollToBottom(100);
+      }, 500);
+    }
+
+    this.subscription = this.chat.conversation.subscribe(
+      (data) => {
+        data.forEach(res => {
+          if (res.sentBy === 'bot') {
+            this.receiveMessageAudio();
+            setTimeout(() => {
+              this.content.scrollToBottom(100);
+            }, 500);
+          }
+        });
+      }
+    );
   }
 
   onLogout() {
@@ -42,5 +58,17 @@ export class ChatPage implements OnInit {
     this.router.navigate(['/login']);
   }
 
+  sentMessageAudio() {
+    const audio = new Audio();
+    audio.src = 'assets/sounds/go.mp3';
+    audio.load();
+    audio.play();
+  }
 
+  receiveMessageAudio() {
+    const audio = new Audio();
+    audio.src = 'assets/sounds/come.mp3';
+    audio.load();
+    audio.play();
+  }
 }
