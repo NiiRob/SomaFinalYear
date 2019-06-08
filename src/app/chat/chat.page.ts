@@ -32,17 +32,22 @@ export class ChatPage implements OnInit {
     this.chat.converse(this.formValue);
     this.formValue = '';
 
-    if (this.chat.conversation.value.length !== 0) {
-      this.sentMessageAudio();
-      setTimeout(() => {
-        this.content.scrollToBottom(100);
-      }, 500);
-    }
+    // if (this.chat.conversation.value.length !== 0) {
+    //   this.sentMessageAudio();
+    //   setTimeout(() => {
+    //     this.content.scrollToBottom(100);
+    //   }, 500);
+    // }
 
     this.subscription = this.chat.conversation.subscribe(
       (data) => {
         data.forEach(res => {
-          if (res.sentBy === 'bot') {
+          if (res.sentBy === 'user') {
+            this.sentMessageAudio();
+            setTimeout(() => {
+              this.content.scrollToBottom(100);
+            }, 500);
+          } else if (res.sentBy === 'bot') {
             this.receiveMessageAudio();
             setTimeout(() => {
               this.content.scrollToBottom(100);
@@ -60,15 +65,16 @@ export class ChatPage implements OnInit {
 
   sentMessageAudio() {
     const audio = new Audio();
-    audio.src = 'assets/sounds/go.mp3';
+    audio.src = 'assets/sounds/go1.mp3';
     audio.load();
     audio.play();
   }
 
   receiveMessageAudio() {
     const audio = new Audio();
-    audio.src = 'assets/sounds/come.mp3';
+    audio.src = 'assets/sounds/come1.mp3';
     audio.load();
     audio.play();
   }
+
 }

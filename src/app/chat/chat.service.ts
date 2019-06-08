@@ -2,7 +2,8 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 // import { ApiAiClient } from 'api-ai-javascript';
 import { ApiAiClient } from 'api-ai-javascript/es6/ApiAiClient';
-import { environment } from 'src/environments/environment';
+import { environment } from 'src/environments/environment.prod';
+// import { environment } from 'src/environments/environment';
 
 // Message class for displaying messages in the component
 export class Message {
